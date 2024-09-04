@@ -51,7 +51,6 @@ export const updateTweetController = async (req: Request, res: Response) => {
         } else {
             res.status(404).json({ error: " Tweet not updated" });
         }
-
     } catch (error) {
         console.log(error)
         res.status(500).json({ error: error });
