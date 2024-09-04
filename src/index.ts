@@ -12,7 +12,7 @@ const server = http.createServer(app);
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
-app.set("PORT",3000);
+app.set("PORT",5000);
 app.set("BASE_URL","localhost");
 
 dotenv.config()
