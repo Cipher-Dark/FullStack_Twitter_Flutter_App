@@ -91,7 +91,7 @@ const updateUserWithTweetIdRepo = (userId, tweetId) => __awaiter(void 0, void 0,
 exports.updateUserWithTweetIdRepo = updateUserWithTweetIdRepo;
 const deleteUserWithTweetIdRepo = (userId, tweetId) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield user_model_1.default.findByIdAndUpdate({ uid: userId }, { $pull: { tweets: tweetId } });
+        const result = yield user_model_1.default.findByIdAndUpdate({ uid: userId }, { $pop: { tweets: tweetId } });
         if (result) {
             return true;
         }

@@ -73,16 +73,18 @@ exports.updateTweetController = updateTweetController;
 const deleteTweetController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const tweetId = req.params.tweetId;
     const updatedTweet = req.body;
+    console.log(tweetId);
+    console.log(updatedTweet);
+    console.log(updatedTweet.adminId);
     try {
         const success = yield (0, twitter_repositary_1.deleteTweetRepo)(tweetId);
         if (success) {
-            const deleteUpdateSuccess = yield (0, user_repository_1.deleteUserWithTweetIdRepo)(updatedTweet.adminId, updatedTweet.tweetId);
-            if (deleteUpdateSuccess) {
-                res.status(200).json({ data: "tweet deleted " });
-            }
-            else {
-                res.status(404).json({ error: " Tweet not deleted from user data" });
-            }
+            // const deleteUpdateSuccess = await deleteUserWithTweetIdRepo(tweetId, tweetId);
+            // if (deleteUpdateSuccess) {
+            res.status(200).json({ data: "tweet deleted " });
+            // } else {
+            //     res.status(404).json({ error: " Tweet not deleted from user data" });
+            // }
         }
         else {
             res.status(500).json({ error: " Tweet not deleted" });
