@@ -15,7 +15,7 @@ const server = http_1.default.createServer(app);
 app.use((0, cors_1.default)());
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
-app.set("PORT", 3000);
+app.set("PORT", 4000);
 app.set("BASE_URL", "localhost");
 dotenv_1.default.config();
 // define the routes 
